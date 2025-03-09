@@ -18,7 +18,7 @@ RUN mkdir -p /root/.ant/lib \
 	
 # download and extract Lucene 4.8.1 source
 WORKDIR /root
-RUN git clone -b releases/lucene-solr/4.8.1 https://github.com/apache/lucene.git lucene
+RUN git clone --depth=1 --single-branch --branch releases/lucene-solr/4.8.1 https://github.com/apache/lucene.git lucene
 WORKDIR /root/lucene/lucene
 
 # patch files for invalid Java 8 uninitialized field access
